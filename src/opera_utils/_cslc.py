@@ -460,7 +460,7 @@ def make_nodata_mask(
         " --creation-option BLOCKXSIZE=256 --creation-option BLOCKYSIZE=256"
     )
     logger.info(cmd)
-    subprocess.check_call(cmd, shell=True)
+    subprocess.check_call(cmd, shell=False)
 
     with tempfile.TemporaryDirectory() as tmpdir:
         temp_vector_file = Path(tmpdir) / "temp.geojson"
